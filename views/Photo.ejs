@@ -31,12 +31,13 @@ https://templatemo.com/tm-552-video-catalog
 			<div class="mx-auto tm-content-container">
 				<main>
 					<div class="row mb-5 pb-4">
-						<div class="col-12">
+						<div class="col-12 text-center">
 							<!-- Video player 1422x800 -->
-							<video width="1422" height="800" controls autoplay>
-							  <source src="<%= photo.image %>" type="video/mp4">							  
-							Your browser does not support the video tag.
-							</video>
+							<div style="max-width: 1000px; margin: auto; ">
+								<img style="width: 100%;" src="<%= photo.image %>" >
+							</div>
+							  							  
+					
 						</div>
 					</div>
 					<div class="row mb-5 pb-5">
@@ -46,6 +47,16 @@ https://templatemo.com/tm-552-video-catalog
 								<h2 class="mb-5 tm-video-title"><%= photo.title %></h2>
 								<p class="mb-4"><%= photo.description %></p>
 							</div>							
+						</div>
+						<div class="col-xl-4 col-lg-5">
+							<div class="tm-bg-gray tm-share-box">
+								<div class="text-center">
+									<a  href="/photos/edit/<%= photo._id %>"class="btn btn-primary p-0 mb-4 tm-btn-animate tm-btn-download">Update</a>
+								</div>
+								<div class="text-center">
+									<a  href=""class="btn btn-danger p-0 mb-4 tm-btn-animate tm-btn-download">Delete</a>
+								</div>
+							</div>
 						</div>
 				
 					</div>
