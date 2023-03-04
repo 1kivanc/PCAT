@@ -11,8 +11,11 @@ const PageController = require('./controllers/pageConrtoller');
 //Connect DB
 mongoose.set('strictQuery', false);
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://127.0.0.1:27017/pcat-test-db',{
-  
+mongoose.connect('mongodb+srv://kivanc:bPbBZH1Se1tsDHCx@cluster0.qagikoc.mongodb.net/?retryWrites=true&w=majority'
+).then(() => {
+  console.log('DB CONNECT')
+}).catch((err) => {
+  console.log(err);
 });
 
 //TEMPLATE ENGINE
@@ -28,7 +31,7 @@ app.use(
     methods: ['POST', 'GET'],
   })
 );
-const port = 3000;
+const port = process.env.PORT  || 3000;
 
 app.get('/',PhotoController.getAllPhotos);
 
