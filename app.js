@@ -11,7 +11,7 @@ const PageController = require('./controllers/pageConrtoller');
 //Connect DB
 mongoose.set('strictQuery', false);
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://kivanc:bPbBZH1Se1tsDHCx@cluster0.qagikoc.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect('mongodb+srv://kivanc:`${process.env.password}`@cluster0.qagikoc.mongodb.net/?retryWrites=true&w=majority'
 ).then(() => {
   console.log('DB CONNECT')
 }).catch((err) => {
