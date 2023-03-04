@@ -7,11 +7,12 @@ const methodOverride = require('method-override');
 const app = express();
 const PhotoController = require('./controllers/PhotoController');
 const PageController = require('./controllers/pageConrtoller');
+const password = process.env.Password;
 
 //Connect DB
 mongoose.set('strictQuery', false);
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://kivanc:`${process.env.password}`@cluster0.qagikoc.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(`mongodb+srv://kivanc:${password}@cluster0.qagikoc.mongodb.net/?retryWrites=true&w=majority`
 ).then(() => {
   console.log('DB CONNECT')
 }).catch((err) => {
